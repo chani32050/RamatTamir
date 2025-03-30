@@ -25,4 +25,4 @@ async function update(req,res) {
     let m=await ManagementModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(m).status(200)
 }
-Module.exports={ getAll,getById,create,deleteById,update} 
+module.exports={ getAll,getById,create,deleteById,update} 

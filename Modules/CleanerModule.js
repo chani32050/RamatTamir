@@ -5,7 +5,8 @@ const CleanerModule=mongoose.Schema({
     Id:{ type: Number, required: true, unique: true }, // מזהה ייחודי חובה
 	Name:{ type: String, required: true, trim: true, minlength: 2, maxlength: 50 }, // שם חובה, ללא רווחים מיותרים
     dayInWork: { 
-        type: [DayInWeek], // מערך של מחרוזות
+        type: [String], // יום בשבוע
+        enum: Object.values(DayInWeek), // מגביל את הערכים לאלה המוגדרים ב-enum
         required: true 
     }
 })

@@ -27,4 +27,4 @@ async function update(req,res) {
     let e=await ElderlyModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(e).status(200)
 }
-Module.exports={ getAll,getById,create,deleteById,update} 
+module.exports={ getAll,getById,create,deleteById,update} 

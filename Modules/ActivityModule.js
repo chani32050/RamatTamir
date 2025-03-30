@@ -4,7 +4,8 @@ const ActivityModule=mongoose.Schema({
     Id: { type: Number, required: true, unique: true }, // מזהה ייחודי חובה
     Name: { type: String, required: true, trim: true, minlength: 2, maxlength: 100 }, // שם האירוע
     Category: { 
-        type: ActivityCategory, 
+        type: String,
+        enum: Object.values(ActivityCategory), // מגביל את הערכים לאלה המוגדרים ב-enum
         required: true
     },
     Date: { type: Date, required: true }, // תאריך האירוע

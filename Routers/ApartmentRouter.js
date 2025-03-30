@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getAll,getById,create,deleteById,update} = require("../Controllers/ApartmentCleanController")
+const {getAll,getById,create,deleteById,update} = require("../Controllers/ApartmentController")
 
 router.post("/create",create)
 router.get("/getAll",getAll)

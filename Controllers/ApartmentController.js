@@ -26,4 +26,4 @@ async function update(req,res) {
     let a=await ApartmentModules.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(a).status(200)
 }
-Module.exports={ getAll,getById,create,deleteById,update} 
+module.exports={ getAll,getById,create,deleteById,update} 
