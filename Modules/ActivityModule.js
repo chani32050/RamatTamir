@@ -9,7 +9,7 @@ const ActivityModule=mongoose.Schema({
     },
     Date: { type: Date, required: true }, // תאריך האירוע
     Location: { type: String, required: true, trim: true, minlength: 2, maxlength: 100 }, // מיקום האירוע
-    participantsList: { type: [Number], default: [] }, // רשימת משתתפים (שמות)
+    participantsList: { type: [mongoose.Schema.Types.ObjectId], default: [],ref:'ElderlyModule' }, // רשימת משתתפים (שמות)
     MakerName: { type: String, required: true, trim: true, minlength: 2, maxlength: 50 }, // שם יוצר האירוע
     Price: { type: Number, default: 0, min: 0 }, // מחיר האירוע (לא יכול להיות שלילי)
     MaxParticipants: { type: Number, default: 50,min:50} // מספר מקסימלי של משתתפים

@@ -11,8 +11,8 @@ const ElderlyModule=mongoose.Schema({
     Phone: { type: String, required: true, match: /^\d{9,10}$/ }, // טלפון חייב להיות 9 או 10 ספרות
     RelativePhone: { type: String, required: true, match: /^\d{9,10}$/ }, // טלפון קרוב משפחה באותו פורמט
     MedicalBag: { type: Number, required: true, min: 1 }, // חייב להיות מספר חיובי
-    ApartmentNumber: { type: Number, required: true, min: 1 }, // חייב להיות מספר חיובי
-    ActivitiesList: { type: [Number], default: [] }, // רשימה של מזהים של פעילויות
+    ApartmentNumber: { type: mongoose.Schema.Types.ObjectId,ref:'ApartmentModule', required: true}, // חייב להיות מספר חיובי
+    ActivitiesList: { type: [mongoose.Schema.Types.ObjectId], ref:'ActivityModule',default: [] }, // רשימה של מזהים של פעילויות
     HasPhilipin: { type: Boolean, required: true } // האם יש מטפל פיליפיני חובה
 })
 module.exports = mongoose.model("ElderlyModule",ElderlyModule)

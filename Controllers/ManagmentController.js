@@ -1,11 +1,4 @@
 const ManagementModule=require("../Modules/ManagementModule")
-   
-// async function furnituresByCategortId(req,res) {
-//     const categoryWithFurniture = await categoryModule.findById(req.params.id)
-//     .populate('arrFurniturs'); // זה יחליף את ה-IDs במידע המלא על הרהיטים
-//     res.send(categoryWithFurniture)
-
-// }
 
 async function getAll(req,res){
     let arrM=await ManagementModule.find()
