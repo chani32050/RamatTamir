@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
+const {ActivityCategory} = require("../Constants/enums")
 const ActivityModule=mongoose.Schema({
     Id: { type: Number, required: true, unique: true }, // מזהה ייחודי חובה
     Name: { type: String, required: true, trim: true, minlength: 2, maxlength: 100 }, // שם האירוע
     Category: { 
-        type: String, 
-        required: true, 
-        enum: ['Music', 'Sports', 'Lecture', 'Workshop', 'Theater', 'Other'] // קטגוריות אפשריות
+        type: ActivityCategory, 
+        required: true
     },
     Date: { type: Date, required: true }, // תאריך האירוע
     Location: { type: String, required: true, trim: true, minlength: 2, maxlength: 100 }, // מיקום האירוע

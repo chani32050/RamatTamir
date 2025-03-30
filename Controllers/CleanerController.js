@@ -1,11 +1,5 @@
 const CleanerModule=require("../Modules/CleanerModule")
    
-async function furnituresByCategortId(req,res) {
-    const categoryWithFurniture = await categoryModule.findById(req.params.id)
-    .populate('arrFurniturs'); // זה יחליף את ה-IDs במידע המלא על הרהיטים
-    res.send(categoryWithFurniture)
-
-}
 
 async function getAll(req,res){
     let arrC=await CleanerModule.find()
@@ -32,3 +26,4 @@ async function update(req,res) {
     let c=await CleanerModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(c).status(200)
 }
+Module.exports={ getAll,getById,create,deleteById,update} 
