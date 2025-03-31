@@ -18,8 +18,8 @@ const ManagerRouter= require("./Routers/ManagerRouter")
 require('dotenv').config();
 const dbPass = process.env.DB_PASS;
 
-// mongoose.connect(dbPass)
-// .then(() => console.log("Connected…")).catch(err => console.log(err))
+ mongoose.connect(dbPass)
+.then(() => console.log("Connected…")).catch(err => console.log(err))
 
 app.use("/Activity", ActivityRouter)
 app.use("/Apartment", ApartmentRouter)
