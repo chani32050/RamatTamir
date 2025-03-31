@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const ElderlySignInModule=mongoose.Schema({
-    id: { type: Number, required: true, unique: true }, // מזהה ייחודי חובה
+    Id: { type: Number, required: true, unique: true }, // מזהה ייחודי חובה
     Name: { type: String, required: true, trim: true, minlength: 2, maxlength: 50 }, // שם חובה, ללא רווחים מיותרים
     Email: { type: String, required: true, unique: true, lowercase: true, match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ }, // אימייל תקין וייחודי
     Age: { type: Number, required: true, min: 60, max: 120 }, // גיל חייב להיות בטווח סביר

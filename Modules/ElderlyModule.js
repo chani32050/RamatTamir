@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const {Gender,PersonalStatus}=require("../Constants/enums")
 const ElderlyModule=mongoose.Schema({
-    id: { type: Number, required: true, unique: true }, // מזהה ייחודי חובה
+    Id: { type: Number, required: true, unique: true }, // מזהה ייחודי חובה
     Name: { type: String, required: true, trim: true, minlength: 2, maxlength: 50 }, // שם חובה, ללא רווחים מיותרים
     Email: { type: String, required: true, unique: true, lowercase: true, match: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ }, // אימייל תקין וייחודי
      // אימייל קרוב משפחה תקין

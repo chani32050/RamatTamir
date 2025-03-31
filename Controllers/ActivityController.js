@@ -7,7 +7,7 @@ async function getAll(req,res){
 
 async function getById(req,res) {
     let ca=await ActivityModule.findById(req.params.id)
-    res.send(a).status(200)
+    res.send(ca).status(200)
 }
 
 async function create(req,res) {
