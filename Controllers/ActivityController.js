@@ -25,4 +25,13 @@ async function update(req,res) {
     let a=await ActivityModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(a).status(200)
 }
-module.exports={ getAll,getById,create,deleteById,update} 
+
+async function getByIdWithParticipantsList(req,res) {
+    let a=await ActivityModule.findById(req.params.id).populate('participantsList')
+    res.send(a).status(200)
+}
+async function getAllWithParticipantsList(req,res) {
+    let arrA=await ActivityModule.find().populate('participantsList')
+    res.send(arrA).status(200)
+}
+module.exports={ getAll,getById,create,deleteById,update,getByIdWithParticipantsList,getAllWithParticipantsList } 

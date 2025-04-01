@@ -25,4 +25,12 @@ async function update(req,res) {
     let a=await AppartmentCleanModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(a).status(200)
 }
-module.exports={ getAll,getById,create,deleteById,update} 
+async function getByIdWithCleaner(req,res) {
+    let a=await AppartmentCleanModule.findById(req.params.id).populate('cleanerId')
+    res.send(a).status(200)  
+}
+async function getAllWithCleaner(req,res) {
+    let a=await AppartmentCleanModule.find().populate('AppartmentId')
+    res.send(a).status(200)  
+}
+module.exports={ getAll,getById,create,deleteById,update,getByIdWithCleaner,getAllWithCleaner } 
