@@ -28,4 +28,10 @@ const ActivityCategory = Object.freeze({
     THEATER:'Theater', 
     OTHER:'Other'
 });
-module.exports = {DayInWeek,Gender,PersonalStatus,ActivityCategory};
+const Roles=Object.freeze({
+    ADMIN: 'manager',
+    ELDERLY: 'elderly',
+    CLEANER: 'cleaner',
+    RELATIVE: 'relative'
+});
+module.exports = {DayInWeek,Gender,PersonalStatus,ActivityCategory,Roles};

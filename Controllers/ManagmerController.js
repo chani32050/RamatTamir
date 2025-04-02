@@ -1,4 +1,4 @@
-const ManagementModule=require("../Modules/ManagementModule")
+const ManagemerModule=require("../Modules/ManagerModule")
 //the managment is singleton.
 async function getAll(req,res){
     let arrM=await ManagementModule.find()
@@ -22,11 +22,11 @@ async function deleteById(req,res){
 }
 
 async function update(req,res) {
-    let m=await ManagementModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
+    let m=await ManagemerModule.findByIdAndUpdate(req.params.id,req.body,{new:true})
     res.send(m).status(200)
 }
 async function getByIdWithQueueElderlyToSignIn(req,res) {
-    let m=await ManagementModule.findById(req.params.id).populate('QueueElderlyToSignIn')
+    let m=await ManagemerModule.findById(req.params.id).populate('QueueElderlyToSignIn')
     res.send(m).status(200)
 }
 module.exports={ getAll,getById,create,deleteById,update,getByIdWithQueueElderlyToSignIn } 

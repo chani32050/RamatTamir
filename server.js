@@ -14,6 +14,8 @@ const CleanerRouter= require("./Routers/CleanerRouter")
 const ElderlyRouter= require("./Routers/ElderlyRouter")
 const ElderlySignInRouter= require("./Routers/ElderlySignInRouter")
 const ManagerRouter= require("./Routers/ManagerRouter")
+const UserRouter= require("./Routers/UserRouter")
+
 
 require('dotenv').config();
 const dbPass = process.env.DB_PASS;
@@ -28,6 +30,7 @@ app.use("/Cleaner", CleanerRouter)
 app.use("/Elderly", ElderlyRouter)
 app.use("/ElderlySignIn", ElderlySignInRouter)
 app.use("/Manager", ManagerRouter)
+app.use("/User", UserRouter)
 
 
 app.listen(8080, ()=>{

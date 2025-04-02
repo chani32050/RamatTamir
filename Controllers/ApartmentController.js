@@ -1,4 +1,4 @@
-const ApartmentModules=require("../Modules/ApartmentModules")
+const ApartmentModules=require("../Modules/ApartmentModule")
 
 
 async function getAll(req,res){

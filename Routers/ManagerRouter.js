@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getAll,getById,create,deleteById,update,getByIdWithQueueElderlyToSignIn} = require("../Controllers/ManagmentController")
+const {getAll,getById,create,deleteById,update,getByIdWithQueueElderlyToSignIn} = require("../Controllers/ManagmerController")
 
 router.post("/create",create)
 router.get("/getAll",getAll)
