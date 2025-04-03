@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const { DayInWeek } = require("../Constants/enums") // נייבא את המערך של הימים מחוץ למודול
 const ApartmentCleanModule=mongoose.Schema({
-    AppartmentId: { type: Number, required: true }, // מזהה דירה חובה
+    AppartmentId: { type: mongoose.Schema.Types.ObjectId,ref:'AppartmentModule', required: true }, // מזהה דירה חובה
     cleanerId: { type: mongoose.Schema.Types.ObjectId,ref:'CleanerModule', required: true }, // מזהה מנקה חובה
     Day: { 
         type:String, // יום בשבוע
