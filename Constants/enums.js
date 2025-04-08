@@ -34,4 +34,15 @@ const Roles=Object.freeze({
     CLEANER: 'cleaner',
     RELATIVE: 'relative'
 });
-module.exports = {DayInWeek,Gender,PersonalStatus,ActivityCategory,Roles};
+const ElderlyStatus=Object.freeze({
+    ACTIVE: 'active',//פעיל
+    INACTIVE: 'inactive',//סיים
+    PENDING: 'pending'//מחכה לאישור קבלה
+});
+const ApartmentStatus=Object.freeze({
+    OCCUPIED: 'occupied',//תפוס
+    AVAILABLE: 'available',//פנוי
+    RESERVED: 'reserved',//שמור
+    UNAVAILABLE: 'unavailable'//לא זמין
+});
+module.exports = {DayInWeek,Gender,PersonalStatus,ActivityCategory,Roles,ElderlyStatus,ApartmentStatus};
