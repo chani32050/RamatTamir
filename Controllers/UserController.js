@@ -14,6 +14,7 @@ async function create(req, res) {
     let m = await new UserModule(req.body);
     await m.save();
     console.log(req.body);
+    
     res.status(200).send(m);
 }
 

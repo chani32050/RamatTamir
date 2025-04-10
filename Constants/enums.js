@@ -34,7 +34,7 @@ const Roles=Object.freeze({
     CLEANER: 'cleaner',
     RELATIVE: 'relative'
 });
-const ElderlyStatus=Object.freeze({
+const UserStatus=Object.freeze({
     ACTIVE: 'active',//פעיל
     INACTIVE: 'inactive',//סיים
     PENDING: 'pending'//מחכה לאישור קבלה
@@ -45,4 +45,4 @@ const ApartmentStatus=Object.freeze({
     RESERVED: 'reserved',//שמור
     UNAVAILABLE: 'unavailable'//לא זמין
 });
-module.exports = {DayInWeek,Gender,PersonalStatus,ActivityCategory,Roles,ElderlyStatus,ApartmentStatus};
+module.exports = {DayInWeek,Gender,PersonalStatus,ActivityCategory,Roles,UserStatus,ApartmentStatus};
